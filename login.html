@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secret Message 💌</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+        }
+        .container {
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+        input {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 2px solid #ff9a9e;
+            border-radius: 20px;
+            font-size: 16px;
+            outline: none;
+        }
+        button {
+            background-color: #ff5c8d;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 5px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #ff3371;
+        }
+        #message {
+            font-size: 24px;
+            margin: 20px 0;
+            color: #ff3371;
+            font-weight: bold;
+        }
+        h1 {
+            color: #ff3371;
+            margin-bottom: 20px;
+        }
+        #responseButtons {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 id="title">Heyy Cutie!💕</h1>
+        <input type="text" id="nameInput" placeholder="Enter your name">
+        <button onclick="showMessage()">Submit</button>
+        <div id="message"></div>
+        <div id="responseButtons">
+            <button onclick="agree()">Accept</button>
+            <button onclick="reject()">Reject</button>
+        </div>
+    </div>
+
+    <script>
+        function showMessage() {
+            const name = document.getElementById('nameInput').value;
+            if (name.trim() !== '') {
+                document.getElementById('message').innerHTML = `I love you, ${name}! ❤️`;
+                document.getElementById('responseButtons').style.display = 'block';
+                document.getElementById('nameInput').style.display = 'none';
+                document.querySelector('button[onclick="showMessage()"]').style.display = 'none';
+                document.getElementById('title').style.display = 'none'; // Hide the title
+            } else {
+                alert("Please enter your name first!");
+            }
+        }
+
+        function agree() {
+            text = "I love you too, my love! 💕\nGreat! The feeling is mutual!\n\nKissi dedo 👉👈 --> @piyuuxh";
+            alert(text);
+        }
+
+        function reject() {
+            text = " I'm sorry, but I can't accept that. My love is unconditional! 😏 \n\n~piyushh"
+            alert(text);
+        }
+    </script>
+</body>
+</html>
